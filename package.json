@@ -1,0 +1,20 @@
+{
+  "name": "rule-builder-architecture",
+  "version": "1.0.0",
+  "description": "shopware 6 rule builder architecture presentation",
+  "license": "MIT",
+  "homepage": "https://github.com/larskemper/rule-builder-architecture#readme",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larskemper/rule-builder-architecture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/larskemper/rule-builder-architecture/issues"
+  },
+  "devDependencies": {
+    "mdx-deck": "^4.1.1"
+  }
+}
