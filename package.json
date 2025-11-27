@@ -5,7 +5,9 @@
   "license": "MIT",
   "homepage": "https://github.com/larskemper/rule-builder-architecture#readme",
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "watch": "marp -w deck.md -o rule-builder-architecture.html --theme theme.css",
+    "build": "marp deck.md -o rule-builder-architecture.html --theme theme.css",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,7 @@
     "url": "https://github.com/larskemper/rule-builder-architecture/issues"
   },
   "devDependencies": {
-    "mdx-deck": "^4.1.1"
+    "@marp-team/marp-cli": "^4.2.3",
+    "prettier": "^3.4.2"
   }
 }

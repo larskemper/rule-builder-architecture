@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+
+:root {
+  /* Shopware Brand Colors */
+  --sw-brand-500: #189eff; /* Primary brand blue */
+  --sw-brand-600: #0084e5; /* Hover state */
+  --sw-brand-700: #006bbd; /* Pressed state */
+
+  /* Shopware Zinc Scale (dark theme) */
+  --sw-zinc-0: #ffffff;
+  --sw-zinc-50: #f9fafb;
+  --sw-zinc-75: #f4f5f7;
+  --sw-zinc-100: #eceef1;
+  --sw-zinc-300: #c5c9d2;
+  --sw-zinc-400: #a3a9b6;
+  --sw-zinc-600: #6e7687;
+  --sw-zinc-850: #232732;
+  --sw-zinc-900: #181b22;
+  --sw-zinc-975: #101013;
+  --sw-zinc-1000: #0a0a0c;
+
+  /* Shopware Status Colors */
+  --sw-red-500: #ff4d4d;
+  --sw-orange-500: #ff9500;
+  --sw-green-500: #00c853;
+  --sw-purple-700: #7c3aed;
+
+  /* Theme mapping */
+  --color-background: var(--sw-zinc-1000);
+  --color-surface: var(--sw-zinc-900);
+  --color-surface-elevated: var(--sw-zinc-850);
+  --color-text-primary: var(--sw-zinc-0);
+  --color-text-secondary: var(--sw-zinc-400);
+  --color-text-tertiary: var(--sw-zinc-600);
+  --color-brand: var(--sw-brand-500);
+  --color-brand-hover: var(--sw-brand-600);
+  --color-accent: var(--sw-purple-700);
+}
+
+section {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  padding: 48px 64px;
+  line-height: 1.5;
+}
+
+/* Typography - following Shopware font tokens */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5em; /* ~70px - headline introducing pages */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.75em; /* ~49px */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25em; /* ~35px */
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Links - using brand color */
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-brand-hover);
+  text-decoration: underline;
+}
+
+/* Emphasis */
+strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+em {
+  color: var(--color-brand);
+  font-style: italic;
+}
+
+/* Code - using accent purple for syntax highlighting feel */
+code {
+  font-family: "Roboto Mono", monospace;
+  color: var(--sw-purple-700);
+  background: var(--color-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+pre {
+  background: var(--color-surface);
+  border-radius: 8px;
+  padding: 1.25em;
+  overflow-x: auto;
+  border: 1px solid var(--color-surface-elevated);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--sw-purple-700);
+  font-size: 0.7em;
+  line-height: 1.6;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--color-brand);
+  padding-left: 1.25em;
+  margin-left: 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+li::marker {
+  color: var(--color-text-primary);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+th {
+  background: var(--color-surface);
+  color: var(--color-brand);
+  font-weight: 600;
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 2px solid var(--color-surface-elevated);
+}
+
+td {
+  border-bottom: 1px solid var(--color-surface-elevated);
+  padding: 0.75em 1em;
+}
+
+tr:hover td {
+  background: var(--color-surface);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Title/Lead slide - centered content */
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.lead h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.3em;
+}
+
+section.lead p {
+  font-size: 1.2em;
+  color: var(--color-text-secondary);
+}
+
+/* Invert class for light slides */
+section.invert {
+  background: var(--sw-zinc-0);
+  color: var(--sw-zinc-900);
+}
+
+section.invert h1,
+section.invert h2,
+section.invert h3 {
+  color: var(--sw-zinc-900);
+}
+
+section.invert code {
+  background: var(--sw-zinc-100);
+}
+
+section.invert pre {
+  background: var(--sw-zinc-50);
+  border-color: var(--sw-zinc-100);
+}
+
+section.invert blockquote {
+  color: var(--sw-zinc-600);
+}
+
+/* Footer/header styling */
+header,
+footer {
+  font-size: 0.55em;
+  color: var(--color-text-tertiary);
+}
+
+/* Pagination styling */
+section::after {
+  color: var(--color-text-tertiary);
+  font-size: 0.55em;
+  font-weight: 500;
+}
+
+/* Utility: highlight text with brand color */
+mark {
+  background: transparent;
+  color: var(--color-brand);
+  font-weight: 500;
+}
+
+/* Status colors for callouts */
+.success {
+  color: var(--sw-green-500);
+}
+.warning {
+  color: var(--sw-orange-500);
+}
+.error {
+  color: var(--sw-red-500);
+}
+.accent {
+  color: var(--sw-purple-700);
+}
