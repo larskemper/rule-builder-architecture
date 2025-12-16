@@ -5,6 +5,7 @@ paginate: true
 ---
 
 <!-- _class: lead -->
+
 # Rule Builder
 
 fundamentals@after-sales
@@ -23,7 +24,15 @@ The Rule Builder allows merchants to create _dynamic business rules_ without cod
 
 ---
 
+## Rule system vs. Rule Builder
+
+- The **rule system** is the generic engine: evaluate composable rules against a _scope_ (cart, order, customer, …).
+- The **Rule Builder** is the Administration UI: configure rule conditions and combine them visually into a rule tree.
+
+---
+
 <!-- _class: lead -->
+
 ## Definition
 
 "Compare an _input_ value from the _scope_ with a configured _value_ using an _operator_."
@@ -31,6 +40,7 @@ The Rule Builder allows merchants to create _dynamic business rules_ without cod
 ---
 
 <!-- _class: lead -->
+
 ## Rule
 
 Every rule implements a simple interface:
@@ -41,7 +51,16 @@ Core question: Does this condition match the current context?
 
 ---
 
+## Rule contract (important properties)
+
+- **Input**: rules do _not_ fetch data. Everything comes from the provided _rule scope_.
+- **Output**: always a **boolean** (`true` / `false`).
+- **No side effects**: rules don't change carts, orders, or state. They're pure evaluations.
+
+---
+
 <!-- _class: lead -->
+
 ## Example
 
 "If the _customer's group_ is _'VIP'_ **AND** the _cart amount_ is greater than or equal to _€150_ **AND** the _shipping country_ is _Germany_, then offer the _'Express Shipping'_ method."
@@ -49,6 +68,7 @@ Core question: Does this condition match the current context?
 ---
 
 <!-- _class: lead -->
+
 ## Example tree
 
 <img src="./diagrams/rule-example-tree.png" height="400px">
@@ -56,6 +76,7 @@ Core question: Does this condition match the current context?
 ---
 
 <!-- _class: lead -->
+
 ## Composite Pattern (Container Rules)
 
 Rules are composed as a _tree structure_ using logical containers:
@@ -77,6 +98,7 @@ Rules are composed as a _tree structure_ using logical containers:
 ---
 
 <!-- _class: lead -->
+
 ## Evaluation Context (Rule scope)
 
 Scopes provide the _context data_ for rule evaluation:
@@ -85,7 +107,15 @@ Scopes provide the _context data_ for rule evaluation:
 
 ---
 
+## Runtime usage patterns
+
+- **ID-based decisions**: entities reference an `availability_rule_id` and are allowed if the ID is in `SalesChannelContext::getRuleIds()`.
+- **Direct evaluation**: fetch a rule tree, build the right scope, and call `Rule::match(scope)` on the root.
+
+---
+
 <!-- _class: lead -->
+
 ## Rule Evaluation
 
 <img src="./diagrams/rule-cart-evaluation.png" height="400px">
@@ -93,6 +123,7 @@ Scopes provide the _context data_ for rule evaluation:
 ---
 
 <!-- _class: lead -->
+
 ## Payload Storage
 
 Rules are stored as _serialized PHP objects_ for fast runtime evaluation.
@@ -102,6 +133,7 @@ Rules are stored as _serialized PHP objects_ for fast runtime evaluation.
 ---
 
 <!-- _class: lead -->
+
 ## Architecture Summary
 
 <img src="./diagrams/rule-overview.png" height="400px">
@@ -109,6 +141,7 @@ Rules are stored as _serialized PHP objects_ for fast runtime evaluation.
 ---
 
 <!-- _class: lead -->
+
 ## Bottleneck
 
 Rule evaluation needs the cart.
@@ -119,5 +152,7 @@ That creates a costly dependency cycle (lots of loading on each request).
 => Rule System v2 [RFC](https://github.com/shopware/shopware/discussions/3406)
 
 ---
+
+<!-- _class: lead -->
 
 ## Questions?

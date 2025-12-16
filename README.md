@@ -20,4 +20,3 @@ npm run format
 ```
 
 Open `rule-builder-architecture.html` in your browser.
-
