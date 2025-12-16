@@ -171,6 +171,7 @@ th {
 td {
   border-bottom: 1px solid var(--color-surface-elevated);
   padding: 0.75em 1em;
+  text-align: left;
 }
 
 tr:hover td {
@@ -179,8 +180,10 @@ tr:hover td {
 
 /* Images */
 img {
-  max-width: 100%;
+  max-width: 85%;
   border-radius: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Title/Lead slide - centered content */
