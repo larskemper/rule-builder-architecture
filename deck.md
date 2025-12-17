@@ -118,7 +118,7 @@ Scopes provide the _context data_ for rule evaluation:
 
 ## Rule Evaluation
 
-<img src="./diagrams/rule-cart-evaluation.png" height="400px">
+<img src="./diagrams/rule-cart-evaluation.png" height="550px">
 
 ---
 
@@ -136,7 +136,7 @@ Rules are stored as _serialized PHP objects_ for fast runtime evaluation.
 
 ## Architecture Summary
 
-<img src="./diagrams/rule-overview.png" height="400px">
+<img src="./diagrams/rule-overview.png" height="550px">
 
 ---
 
